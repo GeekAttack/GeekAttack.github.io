@@ -1,6 +1,10 @@
 <html>
   <head>
       <style>
+          h1{
+            color : white;
+            padding: 15px;
+          }
           *{
 	margin: 0;
 	padding: 0;
@@ -19,7 +23,7 @@ body{
 	position: relative;
 	width: 300px;
 	height: 400px;
-	display: flex;
+	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	background: #060c21;
@@ -46,16 +50,16 @@ body{
 	z-index: -2;
 	filter: blur(40px);
 }
-.box:nth-child(1):before,
-.box:nth-child(1):after{
+.box:nth-child(3n+1):before,
+.box:nth-child(3n+1):after{
 	background: linear-gradient(235deg, #89ff00, #010615, #00bcd4);
 }
-.box:nth-child(2):before,
-.box:nth-child(2):after{
+.box:nth-child(3n+2):before,
+.box:nth-child(3n+2):after{
 	background: linear-gradient(235deg, #ff005e, #010615, #fbff00);
 }
-.box:nth-child(3):before,
-.box:nth-child(3):after{
+.box:nth-child(3n):before,
+.box:nth-child(3n):after{
 	background: linear-gradient(235deg, #772aff, #010615, #2196F3);
 }
 .box .glass{
@@ -76,6 +80,7 @@ body{
   </head>
 
   <body>
+      <h1>My Projects</h1>
     <div id = "main-content"> </div>
 
     
@@ -100,7 +105,7 @@ body{
         console.log(response)
         var div_body=''
         response.forEach(element => {
-            div_body += '<div class="box"><div class="glass"></div><div class="content"><h2>'+element.name+'</h2><p></p></div></div>'
+            div_body += `<div class="box"><a href="${element.html_url}"><div class="glass"></div><div class="content"><h2>${element.name}</h2><p></p></div></a></div>`
         });
         document.getElementById('main-content').innerHTML=div_body;
         
