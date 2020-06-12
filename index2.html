@@ -1,17 +1,72 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Nancy Bogati
-        </title>
-    </head>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nancy Bogati</title>
+<style>
 
-    <body>
-        <div class="card">
-            <img src="img_avatar.png" alt="Avatar" style="width:100%">
-            <div class="container">
-              <h4><b>John Doe</b></h4> 
-              <p>Architect & Engineer</p> 
-            </div>
-          </div>  
-    </body>
-</html>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+</style>
+</head>
+<body>
+
+<h2>My Projects</h2>
+
+<div id="github-projects"></div>
+
+
+<div class="card">
+  <div class="container">
+    <h4><b>John Doe</b></h4> 
+    <p>Architect & Engineer</p> 
+  </div>
+</div>
+
+<div class="card">
+    <div class="container">
+      <h4><b>Bro Broe</b></h4> 
+      <p>Engineer</p> 
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="container">
+      <h4><b>Yien qe</b></h4> 
+      <p>Doctor</p> 
+    </div>
+  </div> 
+
+
+<script>
+
+
+// GitHub API URL
+const url = 'https://api.github.com/users/GeekAttack/repos';
+
+    // `url` - the URL you want to call
+    fetch(url)
+    .then(res => {
+    document.getElementById('github-projects').innerHTML=div_body;
+    });
+ 
+    // .then(res => res.json())
+    // .then(res => console.log(res));
+  
+</script>
+
+
+</body>
+</html> 
+
